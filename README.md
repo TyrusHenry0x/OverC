@@ -63,3 +63,12 @@ https://www.figma.com/file/4OOrlEsz3kGegFs4vZJ51O/OverC?node-id=0%3A1
 
 ### Component Hierarchy
 ![Hierarchy](https://i.imgur.com/auP8bPn.png)
+
+| Task | Priority | Estimated Time | Actual Time |
+| :--- | :---: | :---: | :---: |
+| Back end set up | H | 4H | TBD |
+| Front End Development | H | 12H | TBD | 
+| Debugging | L | 3H | TBD |
+| Styling | H | 14H | TBD |
+| Testing and Documentation update	| H | 1H | TBD |
+| Presenting | H | 12/16 | Incomplete |
