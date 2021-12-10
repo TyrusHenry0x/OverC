@@ -54,8 +54,4 @@
 |  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
 <br>
 
-### Client (Front End)
-
-#### Wireframes
-
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
+### Wireframes
