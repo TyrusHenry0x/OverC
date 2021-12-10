@@ -1,7 +1,6 @@
 # OverC
-
 ## Overview
-#OverC is an application that's dedicated to taking your day-to-day tasks, and creating a flushed, organized platform that helps maintain productivity throughout your day.
+OverC is an application that's dedicated to taking your day-to-day tasks, and creating a flushed, organized platform that helps maintain productivity throughout your day.
 
 <br>
 
