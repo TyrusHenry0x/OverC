@@ -56,3 +56,5 @@
 https://www.figma.com/file/4OOrlEsz3kGegFs4vZJ51O/OverC?node-id=0%3A1
 
 ### ERD
+
+![ERD](https://imgur.com/a/p45oIVN)
