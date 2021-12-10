@@ -13,16 +13,12 @@
 - Full Crud functionality for Projects and Tasks.
  -->
 ### Client (Front End)
-- Home Page (Not Signed In)
-- Home Page (Signed In)
-- Sign In
-- Sign Up ("Create an Account")
-- Project Page
-- Task Page
+- Home Page
+- Constellation Page
+- About Page
 - Navbar
 
 ### Server(Back End)
-- Login/Authentication
 - Relationships between Session and Task tables
 - Build a Ruby on Rails server, exposing RESTful JSON endpoints.
 - Utilize Rails to define models for interacting with the database.
@@ -41,17 +37,21 @@
 - Deploy early and often.
 <br>
 
-
+### PMVP
+- Login/Authentication
+- Sign In
+- Sign Up ("Create an Account")
+- Home Page (Signed In)
 
 ### Libraries and Dependencies
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | React alllows me to compose a complex UI from small and isolated pieces of code |
+|   React Router   | Router enables the navigation among views of various components in a React Application |
+|   Ruby on Rails  | Rails is an open source framework for Web development in Ruby. Rails will be used to create the apps database |
+ |
 <br>
+
 
 ### Wireframes
