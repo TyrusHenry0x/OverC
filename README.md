@@ -54,7 +54,12 @@
 
 ### Wireframes
 https://www.figma.com/file/4OOrlEsz3kGegFs4vZJ51O/OverC?node-id=0%3A1
-
+![Wireframes](https://i.imgur.com/z4KiTF3.png)
+![Wireframes](https://i.imgur.com/T9jv6gg.png)
+![Wireframes](https://i.imgur.com/nztbYI3.png)
+![Wireframes](https://i.imgur.com/dyEigEZ.png)
 ### ERD
+![erd](https://i.imgur.com/03vyqND.png)
 
-![ERD](https://imgur.com/a/p45oIVN)
+### Component Hierarchy
+![Hierarchy](https://i.imgur.com/auP8bPn.png)
