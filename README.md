@@ -11,11 +11,66 @@ OverC is an application that's dedicated to taking your day-to-day tasks, and cr
 - Projects and Tasks tables.
 - Full Crud functionality for Projects and Tasks.
  -->
+ 
+ ### Libraries and Dependencies
+
+|     Library      | Description                                |
+| :--------------: | :----------------------------------------- |
+|      React       | React alllows me to compose a complex UI from small and isolated pieces of code |
+|   React Router   | Router enables the navigation among views of various components in a React Application |
+|   Ruby on Rails  | Rails is an open source framework for Web development in Ruby. Rails will be used to create the apps database |
+<br>
+
 ### Client (Front End)
 - Home Page
 - Constellation Page
 - About Page
 - Navbar
+
+``` src
+|__ assets/
+      |__ fonts
+      |__ images
+|__ components/
+      |__ Home
+            |__Home.css
+            |__Home.jsx
+      |__ Nav
+            |__Nav.css
+            |__Nav.jsx
+      |__ Header
+            |__Header.css
+            |__Header.jsx
+      |__ Footer
+            |__Footer.css
+            |__Footer.jsx
+      |__ Constellations
+            |__Constellations.css
+            |__Constellations.jsx
+      |__ Tasks.jsx
+            |__Tasks.css
+            |__Tasks.jsx
+      |__ About.jsx
+            |__About.css
+            |__About.jsx
+|__services/
+    |__apiConfig.js
+    |__auth.js
+    |__posts.js
+|__App.css
+|__App.js
+|__index.css
+|__index.js
+```
+
+| Task | Priority | Estimated Time | Actual Time |
+| :--- | :---: | :---: | :---: |
+| Back end set up | H | 4H | TBD |
+| Front End Development | H | 12H | TBD | 
+| Debugging | L | 3H | TBD |
+| Styling | H | 14H | TBD |
+| Testing and Documentation update	| H | 1H | TBD |
+| Presenting | H | 12/16 | Incomplete |
 
 ### Server(Back End)
 - Relationships between Session and Task tables
@@ -42,15 +97,6 @@ OverC is an application that's dedicated to taking your day-to-day tasks, and cr
 - Sign Up ("Create an Account")
 - Home Page (Signed In)
 
-### Libraries and Dependencies
-
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | React alllows me to compose a complex UI from small and isolated pieces of code |
-|   React Router   | Router enables the navigation among views of various components in a React Application |
-|   Ruby on Rails  | Rails is an open source framework for Web development in Ruby. Rails will be used to create the apps database |
-<br>
-
 ### Wireframes
 https://www.figma.com/file/4OOrlEsz3kGegFs4vZJ51O/OverC?node-id=0%3A1
 ![Wireframes](https://i.imgur.com/z4KiTF3.png)
@@ -62,12 +108,3 @@ https://www.figma.com/file/4OOrlEsz3kGegFs4vZJ51O/OverC?node-id=0%3A1
 
 ### Component Hierarchy
 ![Hierarchy](https://i.imgur.com/auP8bPn.png)
-
-| Task | Priority | Estimated Time | Actual Time |
-| :--- | :---: | :---: | :---: |
-| Back end set up | H | 4H | TBD |
-| Front End Development | H | 12H | TBD | 
-| Debugging | L | 3H | TBD |
-| Styling | H | 14H | TBD |
-| Testing and Documentation update	| H | 1H | TBD |
-| Presenting | H | 12/16 | Incomplete |
