@@ -1,3 +1,4 @@
+import './Header.css'
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -8,15 +9,15 @@ const Header = () => {
         <NavLink to="/">
           <img
             className="header-logo"
-            src='client/src/assets/images/logo.png'
+            src={require('../../assets/images/logo.png').default}
             alt="logo"
           />
         </NavLink>
         <div className="header-btns">
-          <NavLink to="/constellations">
+          <NavLink to="/constellations" className="header-btns">
             Constellation
           </NavLink>
-          <NavLink to="/about">
+          <NavLink to="/about" className="header-btns">
             About
           </NavLink>
         </div>

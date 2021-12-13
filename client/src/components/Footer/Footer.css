@@ -1,0 +1,20 @@
+.footer-div {
+  height: 55px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #051C24;
+  color: #DAD7D3;
+  position: relative;
+  bottom: 0;
+  font-size: 11px;
+}
+
+.small-logo {
+  height: 55px;
+  width: auto;
+  position: absolute;
+  right: 10px;
+}

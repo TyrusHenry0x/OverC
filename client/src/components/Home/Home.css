@@ -1,0 +1,42 @@
+.home-background-image {
+  background-image: url(../../assets/images/space-pink-stars-4k-ld.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 55px);
+  flex-grow: 1;
+  margin-top: 55px;
+}
+
+.home-content {
+  color: aliceblue;
+  height: 100%;
+  width: 100%;
+  filter: none;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 28%;
+  left: 5%;
+}
+
+.const-link {
+  position: absolute;
+  left: 10px;
+  text-decoration: none;
+  color: aliceblue;
+}
+.welcome-message {
+  position: absolute;
+  display: flex;
+  bottom: 5%;
+  right: 5%;
+  width: 400px;
+  font-size: 20px;
+}
+
+.welcome-message-text {
+  text-align: left;
+}
