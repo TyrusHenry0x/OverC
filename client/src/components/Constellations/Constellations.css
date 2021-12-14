@@ -1,0 +1,18 @@
+.background-image {
+  background-image: url(../../assets/images/Points+And+Lines+Clean+Background+Blue+And+Pink.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 55px);
+  margin-top: 55px;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+p {
+  text-decoration: none;
+  color: aliceblue;
+}

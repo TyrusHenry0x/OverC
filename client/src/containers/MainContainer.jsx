@@ -1,12 +1,20 @@
 import { useState, useEffect } from "react";
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route, Routes, useNavigate } from 'react-router-dom'
+import ConstellationDetail from "../components/ConstellationDetails/ConstellationDetails";
 
 import Constellations from "../components/Constellations/Constellations";
 import Tasks from "../components/Tasks/Tasks";
-import { getAllConstellations } from "../services/constellations";
+import { getAllConstellations, getOneConstellation } from "../services/constellations";
+import { getAllTasks } from "../services/tasks";
+import { postTask } from "../services/tasks";
+import { putTask } from "../services/tasks"
+import { deleteTask } from "../services/tasks";
+import Home from "../components/Home/Home";
 
 export default function MainContainer() {
   const [constellations, setConstellations] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchConstellations = async () => {
@@ -16,7 +24,44 @@ export default function MainContainer() {
     fetchConstellations()
   }, []);
 
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const taskList = await getAllTasks();
+      setTasks(taskList);
+    };
+    fetchTasks();
+  }, []);
+
+  const handleTaskCreate = async (formData) => {
+    const newTask = await postTask(formData);
+    setTasks((prevState) => [...prevState, newTask]);
+    navigate.push('/tasks');
+  };
+
+  const handleConstellationUpdate = async (id, formData) => {
+    const newTask = await putTask(id, formData);
+    setConstellations((prevState) =>
+      prevState.map((task) => {
+        return task.id === Number(id) ? newTask : task;
+      })
+    );
+    navigate.push('/tasks');
+  };
+
+  const handleTaskDelete = async (id) => {
+    await deleteTask(id);
+    setTasks((prevState) => prevState.filter((task) => task.id !== id));
+  };
+
   return (
-    <Constellations constellations={constellations} />
+
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/constellations" element={<Constellations constellations={constellations} />} />
+        <Route path="/constellations/:id" element={<ConstellationDetail />} />
+      </Routes>
+    </div>
+    // <Tasks tasks={tasks} />
   )
 }
