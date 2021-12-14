@@ -1,27 +1,12 @@
-import { useState, useEffect, axios } from "react";
-import Layout from "../Layout/Layout";
-
-const BASE_URL = "http://localhost:3000"
-
-const Constellations = (props) => {
-  const [constellations, setConstellations] = useState([]);
-
-  const getAllConstellations = async () => {
-    const response = await axios.get(`${BASE_URL}/constellations`)
-    return response.data;
-  }
-
-  useEffect(() => {
-    const fetchConstellations = async () => {
-      const theConstellations = await getAllConstellations();
-      setConstellations(theConstellations)
-    }
-    fetchConstellations()
-  }, [])
-
+const Constellations = (constellations) => {
   return (
-    <div>
-      {constellations.map}
+    <div className="background-image">
+      <div className="Constellations">
+        <h1>Constellations</h1>
+        {constellations.constellations.map((constellation) => (
+          <p key={constellation.id}>{constellation.name}</p>
+        ))}
+      </div>
     </div>
   )
 }

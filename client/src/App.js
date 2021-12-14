@@ -2,11 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Constellations from './components/Constellations/Constellations';
 import Home from './components/Home/Home';
+import MainContainer from './containers/MainContainer';
 
 function App() {
+  const BASE_URL = "http://localhost:3000"
+
   return (
     <div className="App">
-      <Constellations />
+      <MainContainer />
 
       {/* <Routes>
         <Route exact path="/" element={<Home />} />

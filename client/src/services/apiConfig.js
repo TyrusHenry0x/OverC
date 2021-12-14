@@ -1,12 +1,9 @@
-// import axios from 'axios'
+import axios from 'axios'
 
-// const getToken = () => {
-//   return new Promise(resolve => {
-//     resolve(`Bearer ${localStorage.getItem
-//       ('token') || null}`)
-//   })
-// }
+const baseUrl = 'http://localhost:3000';
 
-// const api = axios.create({
-//   baseURL: process.env.NODE_ENV === 'production'
-// })
+const api = axios.create({
+  baseURL: baseUrl,
+})
+
+export default api;
