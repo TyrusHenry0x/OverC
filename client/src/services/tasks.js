@@ -14,3 +14,12 @@ export const postTask = async (id, taskData) => {
   const resp = await api.put(`/foods/${id}`, { task: taskData });
   return resp.data
 }
+
+export const deleteTask = async (id) => {
+  await api.delete(`/tasks/${id}`);
+}
+
+export const AddTask = async (idData) => {
+  const resp = await api.post('/constellations/tasks', { task: idData });
+  return resp.data;
+}
