@@ -6,12 +6,12 @@ const Constellations = (constellations) => {
       <div className="constellations-box">
         <h1>Constellations</h1>
         {constellations.constellations.map((constellation) => (
-          <div className="link-box">
-            <NavLink className='link' to={`/constellations/${constellation.id}`}>
+          <NavLink className='link' to={`/constellations/${constellation.id}`}>
+            <div className="link-box">
               <p key={constellation.id}>{constellation.name}
               </p>
-            </NavLink>
-          </div>
+            </div>
+          </NavLink>
         ))}
       </div>
     </div >
