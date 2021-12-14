@@ -1,5 +1,5 @@
 .background-image {
-  background-image: url(../../assets/images/Points+And+Lines+Clean+Background+Blue+And+Pink.png);
+  background-image: url(../../assets/images/1295030.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,11 +8,29 @@
   margin-top: 55px;
 }
 
-h1 {
-  color: aliceblue;
+.constellations-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 55px;
 }
 
-p {
+.link-box {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5) ;
+  max-width: 50%;
+  min-width: 50%;
+  justify-content: center;
+  margin-right: 0;
+}
+
+.link {
   text-decoration: none;
+  color: aliceblue;
+  opacity: 100%;
+}
+
+h1 {
   color: aliceblue;
 }
