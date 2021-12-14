@@ -6,13 +6,13 @@ const Constellations = (constellations) => {
       <div className="Constellations">
         <h1>Constellations</h1>
         {constellations.constellations.map((constellation) => (
-          <NavLink to="/">
+          <NavLink to={`/constellations/${constellation.id}/tasks`}>
             <p key={constellation.id}>{constellation.name}
             </p>
           </NavLink>
         ))}
       </div>
-    </div>
+    </div >
   )
 }
 
