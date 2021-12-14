@@ -9,11 +9,11 @@ export default function ConstellationDetail({ tasks }) {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchConstellation = async () => {
+    const fetchConstellation = async (id) => {
       const constellationItem = await getOneConstellation(id);
       setConstellation(constellationItem);
     };
-    fetchConstellation();
+    fetchConstellation(id);
   }, [id]);
 
   const handleChange = (e) => {
@@ -30,8 +30,8 @@ export default function ConstellationDetail({ tasks }) {
   return (
     <div>
       <h3>{constellation?.name}</h3>
-      {constellation?.constellations.map((constellation) => (
-        <p key={`list${constellation.id}`}>{constellation.name}</p>
+      {constellation?.tasks.map((task) => (
+        <p key={`list${task.id}`}>{task.name}</p>
       ))}
     </div>
   )

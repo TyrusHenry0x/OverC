@@ -11,6 +11,7 @@ import { putTask } from "../services/tasks"
 import { deleteTask } from "../services/tasks";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
+import Layout from "../components/Layout/Layout";
 
 export default function MainContainer() {
   const [constellations, setConstellations] = useState([]);
@@ -57,12 +58,14 @@ export default function MainContainer() {
   return (
 
     <div>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/constellations" element={<Constellations constellations={constellations} />} />
-        <Route path="/constellations/:id" element={<ConstellationDetail />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/constellations" element={<Constellations constellations={constellations} />} />
+          <Route path="/constellations/:id" element={<ConstellationDetail />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Layout>
     </div>
     // <Tasks tasks={tasks} />
   )

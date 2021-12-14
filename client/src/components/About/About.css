@@ -1,0 +1,18 @@
+.about-background {
+  background-image: url(../../assets/images/starfall-gif-46.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 55px);
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-c {
+
+filter: drop-shadow(2px 2px 0 black) 
+drop-shadow(-1px -1px 0 #374261);
+}
