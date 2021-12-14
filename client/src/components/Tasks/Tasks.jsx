@@ -18,6 +18,9 @@ export default function Tasks({ tasks, handleTaskDelete }) {
           </>
         </div>
       ))}
+      <Link to="/tasks/new">
+        <button>Create</button>
+      </Link>
     </div>
-  )
+  );
 }
