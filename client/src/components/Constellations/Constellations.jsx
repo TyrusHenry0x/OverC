@@ -1,10 +1,15 @@
+import { NavLink } from "react-router-dom";
+
 const Constellations = (constellations) => {
   return (
     <div className="background-image">
       <div className="Constellations">
         <h1>Constellations</h1>
         {constellations.constellations.map((constellation) => (
-          <p key={constellation.id}>{constellation.name}</p>
+          <NavLink to="/">
+            <p key={constellation.id}>{constellation.name}
+            </p>
+          </NavLink>
         ))}
       </div>
     </div>
