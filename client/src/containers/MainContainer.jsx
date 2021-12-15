@@ -6,7 +6,7 @@ import Constellations from "../components/Constellations/Constellations";
 import Tasks from "../components/Tasks/Tasks";
 import { getAllConstellations, getOneConstellation } from "../services/constellations";
 import { getAllTasks } from "../services/tasks";
-import { postTask } from "../services/tasks";
+import { PostTask } from "../services/tasks";
 import { putTask } from "../services/tasks"
 import { deleteTask } from "../services/tasks";
 import Home from "../components/Home/Home";
@@ -34,11 +34,11 @@ export default function MainContainer() {
     fetchTasks();
   }, []);
 
-  const handleTaskCreate = async (formData) => {
-    const newTask = await postTask(formData);
-    setTasks((prevState) => [...prevState, newTask]);
-    navigate.push('/tasks');
-  };
+  // const handleTaskCreate = async (formData) => {
+  //   const newTask = await postTask(formData);
+  //   setTasks((prevState) => [...prevState, newTask]);
+  //   navigate.push('/tasks');
+  // };
 
   const handleConstellationUpdate = async (id, formData) => {
     const newTask = await putTask(id, formData);
