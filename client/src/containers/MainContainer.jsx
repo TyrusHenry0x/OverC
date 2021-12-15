@@ -62,7 +62,10 @@ export default function MainContainer() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/constellations" element={<Constellations constellations={constellations} />} />
-          <Route path="/constellations/:id" element={<ConstellationDetail />} />
+          <Route path="/constellations/:id"
+            element={<ConstellationDetail setTasks={setTasks} />}
+          // handleTaskDelete={<handleTaskDelete />}
+          />
           <Route path="/about" element={<About />} />
         </Routes>
       </Layout>

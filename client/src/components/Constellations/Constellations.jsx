@@ -18,4 +18,5 @@ const Constellations = (constellations) => {
   )
 }
 
+
 export default Constellations;

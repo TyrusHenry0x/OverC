@@ -11,8 +11,22 @@
   justify-content: center;
 }
 
+.about-page {
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 90%;
+  /* text-align: center; */
+}
 .big-c {
-
+height: 150px;
 filter: drop-shadow(2px 2px 0 black) 
 drop-shadow(-1px -1px 0 #374261);
+margin-top: 16vh;
+}
+
+.about-text {
+  color: aliceblue;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 5%;
+  font-size: 2.5vh;
 }
