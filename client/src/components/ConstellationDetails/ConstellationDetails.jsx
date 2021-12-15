@@ -31,7 +31,7 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
 
     <div className="detail-background">
       {/* <CreateTask constellation={constellation} setConstellation={setConstellation} /> */}
-      <CreateTask id={id} handleTaskCreate={handleTaskCreate} />
+      <CreateTask handleTaskCreate={handleTaskCreate} />
       <div>
         <h3>{constellation?.name}</h3>
         {constellation?.tasks.map((task) => (

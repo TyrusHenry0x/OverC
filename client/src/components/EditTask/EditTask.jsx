@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
-import { useParams } from 'react-router'
-import { getOneConstellation } from '../../services/constellations'
-// import { postTask } from "../../services/tasks";
+import { useState, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const CreateTask = ({ handleTaskCreate }) => {
+const EditTask = (handleTaskUpdate) => {
   const { id } = useParams()
   const [task, setTask] = useState([])
   const [formData, setFormData] = useState({
@@ -24,13 +22,12 @@ const CreateTask = ({ handleTaskCreate }) => {
   // }, [])
 
   useEffect(() => {
-    const fetchConst = async () => {
-      const solo = await getOneConstellation(id);
-      setTask(solo);
-
+    const prefillFormData = async () => {
+      const taskData = tasks.find((task) => task.id === Number(id));
+      setFormData({ name: taskData.name, time: taskData.time });
     }
-    fetchConst();
-  }, [id]);
+    if (tasks.length) prefillFormData();
+  }, [tasks, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -62,5 +59,3 @@ const CreateTask = ({ handleTaskCreate }) => {
     </div>
   )
 }
-
-export default CreateTask;

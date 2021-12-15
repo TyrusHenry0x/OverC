@@ -13,6 +13,7 @@ import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import Layout from "../components/Layout/Layout";
 import CreateTask from "../components/CreateTask/CreateTask";
+import { Navigate } from "react-router-dom";
 
 export default function MainContainer() {
   const [constellations, setConstellations] = useState([]);
@@ -39,7 +40,6 @@ export default function MainContainer() {
     const newTask = await postTask(formData);
     console.log(newTask)
     setTasks((prevState) => [...prevState, newTask]);
-    navigate.push('/tasks');
   };
 
   const handleConstellationUpdate = async (id, formData) => {
@@ -49,7 +49,7 @@ export default function MainContainer() {
         return task.id === Number(id) ? newTask : task;
       })
     );
-    navigate.push('/tasks');
+    // navigate.push('/tasks');
   };
 
   console.log(handleTaskCreate)
