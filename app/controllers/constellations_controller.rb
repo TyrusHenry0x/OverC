@@ -8,7 +8,7 @@ class ConstellationsController < ApplicationController
   end
 
   def show
-    render json: @constellation
+    render json: @constellation, include: :tasks
   end
 
   def create

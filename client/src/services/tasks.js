@@ -10,7 +10,7 @@ export const getOneTask = async (id) => {
   return resp.data;
 };
 
-export const PostTask = async (taskData) => {
+export const postTask = async (taskData) => {
   const resp = await api.post('/tasks', { task: taskData });
   return resp.data;
 };
