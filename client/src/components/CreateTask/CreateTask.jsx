@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 // import { postTask } from "../../services/tasks";
 
-const CreateTask = ({ id, handleTaskCreate }) => {
+const CreateTask = ({ handleTaskCreate }) => {
   const [formData, setFormData] = useState({
     name: '',
     time: '',
@@ -31,17 +31,16 @@ const CreateTask = ({ id, handleTaskCreate }) => {
   //   setConstellation((prevState) => ({ ...prevState, tasks: newTasks }))
   //   newTasks();
   // };
-
-
+  console.log(formData)
   return (
     <div className='form-box'>
 
       <form onSubmit={(e) => {
         e.preventDefault();
-        handleTaskCreate(id, formData)
+        handleTaskCreate(formData)
       }}>
-        <input type="textarea" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
-        <input type="textarea" name='time' value={time} onChange={handleChange} placeholder='Time' />
+        <input type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
+        <input type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
 
         <input type="submit" />
       </form>

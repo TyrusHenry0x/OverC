@@ -12,6 +12,7 @@ import { deleteTask } from "../services/tasks";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import Layout from "../components/Layout/Layout";
+import CreateTask from "../components/CreateTask/CreateTask";
 
 export default function MainContainer() {
   const [constellations, setConstellations] = useState([]);
@@ -34,8 +35,9 @@ export default function MainContainer() {
     fetchTasks();
   }, []);
 
-  const handleTaskCreate = async (id, formData) => {
-    const newTask = await postTask(id, formData);
+  const handleTaskCreate = async (formData) => {
+    const newTask = await postTask(formData);
+    console.log(newTask)
     setTasks((prevState) => [...prevState, newTask]);
     navigate.push('/tasks');
   };
@@ -50,6 +52,7 @@ export default function MainContainer() {
     navigate.push('/tasks');
   };
 
+  console.log(handleTaskCreate)
   // const handleTaskDelete = async (id) => {
   //   await deleteTask(id);
   //   setTasks((prevState) => prevState.filter((task) => task.id !== id));
@@ -63,10 +66,11 @@ export default function MainContainer() {
           <Route exact path="/" element={<Home />} />
           <Route path="/constellations" element={<Constellations constellations={constellations} />} />
           <Route path="/constellations/:id"
-            element={<ConstellationDetail setTasks={setTasks} />}
+            element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} />}
           // handleTaskDelete={<handleTaskDelete />}
           />
           <Route path="/about" element={<About />} />
+          <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} />} />
         </Routes>
       </Layout>
     </div>
