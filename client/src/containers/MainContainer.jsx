@@ -14,10 +14,12 @@ import About from "../components/About/About";
 import Layout from "../components/Layout/Layout";
 import CreateTask from "../components/CreateTask/CreateTask";
 import { Navigate } from "react-router-dom";
+import EditTask from "../components/EditTask/EditTask";
 
 export default function MainContainer() {
   const [constellations, setConstellations] = useState([]);
   const [tasks, setTasks] = useState([]);
+  const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,39 +42,41 @@ export default function MainContainer() {
     const newTask = await postTask(formData);
     console.log(newTask)
     setTasks((prevState) => [...prevState, newTask]);
+    navigate(`/constellations/${newTask.constellation_id}`)
   };
 
-  const handleConstellationUpdate = async (id, formData) => {
-    const newTask = await putTask(id, formData);
-    setConstellations((prevState) =>
+  const handleTaskUpdate = async (id, formData) => {
+    const updatedTask = await putTask(id, formData);
+    setTasks((prevState) =>
       prevState.map((task) => {
-        return task.id === Number(id) ? newTask : task;
+        return task.id === Number(id) ? updatedTask : task;
       })
     );
     // navigate.push('/tasks');
   };
 
-  console.log(handleTaskCreate)
+  console.log(handleTaskUpdate)
   // const handleTaskDelete = async (id) => {
   //   await deleteTask(id);
   //   setTasks((prevState) => prevState.filter((task) => task.id !== id));
   // };
 
   return (
-
     <div>
-      <Layout>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/constellations" element={<Constellations constellations={constellations} />} />
-          <Route path="/constellations/:id"
-            element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} />}
-          // handleTaskDelete={<handleTaskDelete />}
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} />} />
-        </Routes>
-      </Layout>
+      {/* <Layout> */}
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/constellations" element={<Constellations constellations={constellations} />} />
+        <Route path="/constellations/:id"
+          element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} />}
+        // handleTaskDelete={<handleTaskDelete />}
+        />
+        <Route path="/constellations/:id/edit" element={<EditTask handleTaskUpdate={handleTaskUpdate} />} />
+
+        <Route path="/about" element={<About />} />
+        <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} />} />
+      </Routes>
+      {/* </Layout> */}
     </div>
     // <Tasks tasks={tasks} />
   )

@@ -1,7 +1,7 @@
-import { useState, useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const EditTask = (handleTaskUpdate) => {
+const EditTask = ({ handleTaskUpdate }) => {
   const { id } = useParams()
   const [task, setTask] = useState([])
   const [formData, setFormData] = useState({
@@ -23,11 +23,11 @@ const EditTask = (handleTaskUpdate) => {
 
   useEffect(() => {
     const prefillFormData = async () => {
-      const taskData = tasks.find((task) => task.id === Number(id));
+      const taskData = task.find((task) => task.id === Number(id));
       setFormData({ name: taskData.name, time: taskData.time });
     }
-    if (tasks.length) prefillFormData();
-  }, [tasks, id]);
+    if (task.length) prefillFormData();
+  }, [task, id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -45,11 +45,11 @@ const EditTask = (handleTaskUpdate) => {
   // };
   console.log(formData)
   return (
-    <div className='form-box'>
+    <div className='edit-form-box'>
 
       <form onSubmit={(e) => {
         e.preventDefault();
-        handleTaskCreate(formData)
+        handleTaskUpdate(id, formData)
       }}>
         <input type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
         <input type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
@@ -59,3 +59,5 @@ const EditTask = (handleTaskUpdate) => {
     </div>
   )
 }
+
+export default EditTask;

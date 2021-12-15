@@ -5,8 +5,9 @@ import { getOneConstellation } from "../../services/constellations";
 // import { PostTask } from '../../services/tasks';
 import { deleteTask } from "../../services/tasks";
 import CreateTask from '../CreateTask/CreateTask';
+import EditTask from '../EditTask/EditTask';
 
-export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
+export default function ConstellationDetail({ setTasks, handleTaskCreate, handleTaskUpdate }) {
   const [constellation, setConstellation] = useState(null)
 
 
@@ -37,6 +38,11 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
         {constellation?.tasks.map((task) => (
           <div key={task.id}>
             <p key={`list${task.id}`}>{task.name}</p>
+            <NavLink to="Edit">
+              <button>
+                Edit
+              </button>
+            </NavLink>
             <button onClick={() => handleTaskDelete(task.id)}>Delete</button>
           </div>
         ))}
