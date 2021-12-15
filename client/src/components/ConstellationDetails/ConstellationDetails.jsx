@@ -1,3 +1,4 @@
+import './ConstellationDetails.css'
 import { useState, useEffect } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { getOneConstellation } from "../../services/constellations";
@@ -36,6 +37,7 @@ export default function ConstellationDetail({ setTasks }) {
   };
 
   return (
+
     <div className="detail-background">
       <div>
         <h3>{constellation?.name}</h3>

@@ -1,3 +1,12 @@
 .detail-background {
+  background-image: url(../../assets/images/1295030.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(100vh - 55px);
   margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

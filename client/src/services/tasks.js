@@ -25,6 +25,6 @@ export const deleteTask = async (id) => {
 }
 
 export const AddTask = async (idData) => {
-  const resp = await api.post('/constellations/tasks', { task: idData });
+  const resp = await api.post('/constellations/:id', { task: idData });
   return resp.data;
 }

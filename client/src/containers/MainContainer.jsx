@@ -50,10 +50,10 @@ export default function MainContainer() {
     navigate.push('/tasks');
   };
 
-  const handleTaskDelete = async (id) => {
-    await deleteTask(id);
-    setTasks((prevState) => prevState.filter((task) => task.id !== id));
-  };
+  // const handleTaskDelete = async (id) => {
+  //   await deleteTask(id);
+  //   setTasks((prevState) => prevState.filter((task) => task.id !== id));
+  // };
 
   return (
 
