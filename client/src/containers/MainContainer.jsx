@@ -21,7 +21,7 @@ export default function MainContainer() {
   const [tasks, setTasks] = useState([]);
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
-
+  console.log(toggle)
   useEffect(() => {
     const fetchConstellations = async () => {
       const constellationlist = await getAllConstellations();
@@ -36,13 +36,13 @@ export default function MainContainer() {
       setTasks(taskList);
     };
     fetchTasks();
-  }, []);
+  }, [tasks]);
 
   const handleTaskCreate = async (formData) => {
     const newTask = await postTask(formData);
     console.log(newTask)
     setTasks((prevState) => [...prevState, newTask]);
-    navigate(`/constellations/${newTask.constellation_id}`)
+
   };
 
   const handleTaskUpdate = async (id, formData) => {
@@ -68,13 +68,13 @@ export default function MainContainer() {
         <Route exact path="/" element={<Home />} />
         <Route path="/constellations" element={<Constellations constellations={constellations} />} />
         <Route path="/constellations/:id"
-          element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} />}
+          element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} setToggle={setToggle} />}
         // handleTaskDelete={<handleTaskDelete />}
         />
         <Route path="/constellations/:id/edit" element={<EditTask handleTaskUpdate={handleTaskUpdate} />} />
 
         <Route path="/about" element={<About />} />
-        <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} />} />
+        <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} setToggle={setToggle} />} />
       </Routes>
       {/* </Layout> */}
     </div>

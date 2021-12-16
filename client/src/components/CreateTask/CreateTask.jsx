@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { getOneConstellation } from '../../services/constellations'
 // import { postTask } from "../../services/tasks";
 
-const CreateTask = ({ handleTaskCreate }) => {
+const CreateTask = ({ handleTaskCreate, setToggle }) => {
   const { id } = useParams()
   const [task, setTask] = useState([])
   const [formData, setFormData] = useState({
@@ -52,7 +52,7 @@ const CreateTask = ({ handleTaskCreate }) => {
 
       <form onSubmit={(e) => {
         e.preventDefault();
-        handleTaskCreate(formData)
+        handleTaskCreate(formData);
       }}>
         <input type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
         <input type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
