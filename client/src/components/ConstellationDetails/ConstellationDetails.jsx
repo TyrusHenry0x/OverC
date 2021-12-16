@@ -25,7 +25,7 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate, handle
   const handleTaskDelete = async (id) => {
     await deleteTask(id);
     setTasks((prevState) => prevState.filter((task) => task.id !== id));
-    navigate(`/constellations`)
+    navigate(0)
   };
 
   return (

@@ -63,20 +63,20 @@ export default function MainContainer() {
 
   return (
     <div>
-      {/* <Layout> */}
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/constellations" element={<Constellations constellations={constellations} />} />
-        <Route path="/constellations/:id"
-          element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} setToggle={setToggle} />}
-        // handleTaskDelete={<handleTaskDelete />}
-        />
-        <Route path="/constellations/:id/edit" element={<EditTask handleTaskUpdate={handleTaskUpdate} />} />
+      <Layout>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/constellations" element={<Constellations constellations={constellations} />} />
+          <Route path="/constellations/:id"
+            element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} setToggle={setToggle} />}
+          // handleTaskDelete={<handleTaskDelete />}
+          />
+          <Route path="/constellations/:id/edit" element={<EditTask handleTaskUpdate={handleTaskUpdate} />} />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} setToggle={setToggle} />} />
-      </Routes>
-      {/* </Layout> */}
+          <Route path="/about" element={<About />} />
+          <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} setToggle={setToggle} />} />
+        </Routes>
+      </Layout>
     </div>
     // <Tasks tasks={tasks} />
   )
