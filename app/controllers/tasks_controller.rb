@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task)
+    @task = Task.new(task_params)
     if @task.save
       render json: @task, status: :created
     else
@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    if @task.update(task)
+    if @task.update(task_params)
       render json: @task
     else
       render json: @task.errors, status: :unprocessable_entity
@@ -35,6 +35,6 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
   def task_params
-    params.require(:task).permit(:description, :time)
+    params.require(:task).permit(:name, :time, :constellation_id)
   end
 end

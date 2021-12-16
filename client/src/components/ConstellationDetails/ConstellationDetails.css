@@ -1,0 +1,19 @@
+.detail-background {
+  background-image: url(../../assets/images/1295030.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: calc(100vh - 55px);
+  max-height: fit-content;
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  display: flex;
+}
+
+.task-box {
+  margin-top: 55px;
+}

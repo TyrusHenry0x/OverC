@@ -1,0 +1,40 @@
+.background-image {
+  background-image: url(../../assets/images/1295030.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: calc(100vh - 55px);
+  max-height: fit-content;
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.constellations-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  min-width: 60%;
+}
+
+.link {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5) ;
+  max-width: 50%;
+  min-width: 50%;
+  justify-content: center;
+  margin-bottom: 0.5%;
+  border-radius: 5px;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+
+
+h1 {
+  color: aliceblue;
+}
