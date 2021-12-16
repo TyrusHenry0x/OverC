@@ -4,9 +4,16 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: calc(100vh - 55px);
+  min-height: calc(100vh - 55px);
+  max-height: fit-content;
   margin-top: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-attachment: fixed;
+  display: flex;
+}
+
+.task-box {
+  margin-top: 55px;
 }

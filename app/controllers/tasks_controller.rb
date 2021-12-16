@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    if @task.update(task)
+    if @task.update(task_params)
       render json: @task
     else
       render json: @task.errors, status: :unprocessable_entity

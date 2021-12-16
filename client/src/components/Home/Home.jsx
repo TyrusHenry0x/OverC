@@ -1,13 +1,13 @@
 import './Home.css'
 import { NavLink } from "react-router-dom"
 import Layout from '../Layout/Layout'
+import Fonts from '../../assets/fonts/Fonts'
+
 
 const Home = () => {
   return (
     <div className="home-background-image">
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet" />
+      <Fonts />
       <div className="home-content">
         <div className="welcome-text">
           <h1>Oversee your Future</h1>

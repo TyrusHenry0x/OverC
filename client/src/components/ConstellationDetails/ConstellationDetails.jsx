@@ -33,11 +33,12 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate, handle
     <div className="detail-background">
       {/* <CreateTask constellation={constellation} setConstellation={setConstellation} /> */}
       <CreateTask handleTaskCreate={handleTaskCreate} />
-      <div>
-        <h3>{constellation?.name}</h3>
+      <div className='task-box'>
+        <h3 className='constellation-name'>{constellation?.name}</h3>
         {constellation?.tasks.map((task) => (
           <div key={task.id}>
             <p key={`list${task.id}`}>{task.name}</p>
+            <p key={`list${task.id}`}>{task.time} minutes</p>
             <NavLink to="Edit">
               <button>
                 Edit
