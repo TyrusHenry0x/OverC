@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import ConstellationDetail from "../components/ConstellationDetails/ConstellationDetails";
 import Constellations from "../components/Constellations/Constellations";
 import { getAllConstellations } from "../services/constellations";

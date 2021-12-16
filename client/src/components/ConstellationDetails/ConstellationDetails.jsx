@@ -4,6 +4,7 @@ import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { getOneConstellation } from "../../services/constellations";
 import { deleteTask } from "../../services/tasks";
 import CreateTask from '../CreateTask/CreateTask';
+import Fonts from '../../assets/fonts/Fonts';
 
 export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
   const [constellation, setConstellation] = useState(null)
@@ -29,13 +30,16 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
   return (
 
     <div className="detail-background">
-      <CreateTask handleTaskCreate={handleTaskCreate} />
+      <Fonts />
       <div className='task-box'>
-        <h3 className='constellation-name'>{constellation?.name}</h3>
+        <div className='spacer-div'>
+          <h3 className='constellation-name'>{constellation?.name}</h3>
+          <CreateTask handleTaskCreate={handleTaskCreate} />
+        </div>
         {constellation?.tasks.map((task) => (
-          <div key={task.id}>
-            <p key={`list${task.id}`}>{task.name}</p>
-            <p key={`list${task.id}`}>{task.time} minutes</p>
+          <div className='task-div' key={task.id}>
+            <p className='task-name' key={`list${task.id}`}>{task.name}</p>
+            <p className='task-time' key={`list${task.id}`}>{task.time} minutes</p>
             <NavLink to="Edit">
               <button>
                 Edit

@@ -33,15 +33,14 @@ const CreateTask = ({ handleTaskCreate, setToggle }) => {
   console.log(formData)
   return (
     <div className='form-box'>
-
-      <form onSubmit={(e) => {
+      <form className='create-form' onSubmit={(e) => {
         e.preventDefault();
         handleTaskCreate(formData);
         navigate(0)
       }}>
-        <input type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
-        <input type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
-        <input type="submit" />
+        <input className='name-input' type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' autocomplete="off" />
+        <input className='time-input' type="number" name='time' value={time} onChange={handleChange} placeholder='How long?' autocomplete="off" />
+        <input className='submit-input' type="submit" />
       </form>
     </div>
   )
