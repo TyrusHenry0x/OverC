@@ -10,6 +10,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Maven Pro', sans-serif;
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 .constellations-box {
