@@ -39,7 +39,9 @@
   text-decoration: none;
 }
 
-
+.constellation-buttons {
+  font-size: 18px;
+}
 
 h1 {
   color: aliceblue;

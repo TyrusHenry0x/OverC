@@ -11,7 +11,7 @@ const Constellations = (constellations) => {
         {constellations.constellations.map((constellation) => (
           <NavLink className='link' to={`/constellations/${constellation.id}`}>
             <div key={"constellation.name"} className="link-box">
-              <p key={"constellation.id"}>{constellation.name}
+              <p key={"constellation.id"} className="constellation-buttons">{constellation.name}
               </p>
             </div>
           </NavLink>
