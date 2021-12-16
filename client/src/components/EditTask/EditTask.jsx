@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import './EditTask.css'
 
 const EditTask = ({ handleTaskUpdate }) => {
   const { id } = useParams()
@@ -36,9 +37,9 @@ const EditTask = ({ handleTaskUpdate }) => {
           e.preventDefault();
           handleTaskUpdate(id, formData)
         }}>
-          <input type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
-          <input type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
-          <input type="submit" />
+          <input className='name-input' type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
+          <input className='time-input' type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
+          <input className='submit-input' type="submit" />
         </form>
       </div>
     </div>

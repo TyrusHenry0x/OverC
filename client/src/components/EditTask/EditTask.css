@@ -1,3 +1,24 @@
-edit-form-box {
+.edit-form-box {
   margin-top: 55px;
+}
+
+.edit-background {
+  background-image: url(../../assets/images/1295030.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: calc(100vh - 55px);
+  max-height: fit-content;
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.edit-form-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  width: 50%;
 }
