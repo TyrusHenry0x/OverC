@@ -23,8 +23,3 @@ export const putTask = async (id, taskData) => {
 export const deleteTask = async (id) => {
   await api.delete(`/tasks/${id}`);
 }
-
-// export const AddTask = async (idData) => {
-//   const resp = await api.post('/constellations/:id', { task: idData });
-//   return resp.data;
-// }

@@ -30,7 +30,6 @@ const CreateTask = ({ handleTaskCreate, setToggle }) => {
     }))
   }
 
-  console.log(formData)
   return (
     <div className='form-box'>
       <form className='create-form' onSubmit={(e) => {

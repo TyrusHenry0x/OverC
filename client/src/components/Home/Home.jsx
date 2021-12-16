@@ -2,7 +2,6 @@ import './Home.css'
 import { NavLink } from "react-router-dom"
 import Fonts from '../../assets/fonts/Fonts'
 
-
 const Home = () => {
   return (
     <div className="home-background-image">

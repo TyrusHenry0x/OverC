@@ -29,7 +29,6 @@ const EditTask = ({ handleTaskUpdate }) => {
     }))
   }
 
-  console.log(formData)
   return (
     <div className="edit-background">
       <div className='edit-form-box'>
