@@ -1,6 +1,5 @@
 import './Home.css'
 import { NavLink } from "react-router-dom"
-import Layout from '../Layout/Layout'
 import Fonts from '../../assets/fonts/Fonts'
 
 

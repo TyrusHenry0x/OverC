@@ -2,12 +2,10 @@ import './ConstellationDetails.css'
 import { useState, useEffect } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import { getOneConstellation } from "../../services/constellations";
-// import { PostTask } from '../../services/tasks';
 import { deleteTask } from "../../services/tasks";
 import CreateTask from '../CreateTask/CreateTask';
-import EditTask from '../EditTask/EditTask';
 
-export default function ConstellationDetail({ setTasks, handleTaskCreate, handleTaskUpdate }) {
+export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
   const [constellation, setConstellation] = useState(null)
 
 
@@ -31,7 +29,6 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate, handle
   return (
 
     <div className="detail-background">
-      {/* <CreateTask constellation={constellation} setConstellation={setConstellation} /> */}
       <CreateTask handleTaskCreate={handleTaskCreate} />
       <div className='task-box'>
         <h3 className='constellation-name'>{constellation?.name}</h3>
