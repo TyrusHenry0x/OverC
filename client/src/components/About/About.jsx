@@ -7,6 +7,7 @@ const About = () => {
       <Fonts />
       <div className="about-page">
         <img
+          alt="dacirc"
           src={require('../../assets/images/C-logo-300x300-removebg-preview.png').default}
           className="big-c"
         />
