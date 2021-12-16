@@ -1,6 +1,4 @@
-import { NavLink } from "react-router-dom";
 import Fonts from "../../assets/fonts/Fonts";
-import AboutLinks from "../AboutLinks/AboutLinks";
 import './About.css'
 const About = () => {
   return (
