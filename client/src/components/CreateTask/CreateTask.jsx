@@ -3,10 +3,10 @@ import { useParams } from 'react-router'
 import { getOneConstellation } from '../../services/constellations'
 import { useNavigate } from "react-router-dom";
 
-const CreateTask = ({ handleTaskCreate }) => {
+const CreateTask = ({ handleTaskCreate, setToggle }) => {
   const navigate = useNavigate()
   const { id } = useParams()
-  const [setTask] = useState([])
+  const [task, setTask] = useState([])
   const [formData, setFormData] = useState({
     name: "",
     time: "",
@@ -18,7 +18,6 @@ const CreateTask = ({ handleTaskCreate }) => {
     const fetchConst = async () => {
       const solo = await getOneConstellation(id);
       setTask(solo);
-
     }
     fetchConst();
   }, [id]);
@@ -34,6 +33,7 @@ const CreateTask = ({ handleTaskCreate }) => {
   console.log(formData)
   return (
     <div className='form-box'>
+
       <form onSubmit={(e) => {
         e.preventDefault();
         handleTaskCreate(formData);
