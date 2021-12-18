@@ -27,11 +27,14 @@ https://www.figma.com/file/4OOrlEsz3kGegFs4vZJ51O/OverC?node-id=0%3A1
 |      React       | React alllows me to compose a complex UI from small and isolated pieces of code |
 |   React Router   | Router enables the navigation among views of various components in a React Application |
 |   Ruby on Rails  | Rails is an open source framework for Web development in Ruby. Rails will be used to create the apps database |
+| Javascript | JS is a web component-based library and an open source JavaSscript framework that helps developers design simple views for each state of the JavaScript application. |
 <br>
 
 ### Client (Front End)
 - Home Page
 - Constellation Page
+- Constellation Details
+- Edit Task
 - About Page
 - Navbar
 
