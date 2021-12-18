@@ -3,10 +3,10 @@ import { useParams } from 'react-router'
 import { getOneConstellation } from '../../services/constellations'
 import { useNavigate } from "react-router-dom";
 
-const CreateTask = ({ handleTaskCreate, setToggle }) => {
+const CreateTask = ({ handleTaskCreate }) => {
   const navigate = useNavigate()
   const { id } = useParams()
-  const [task, setTask] = useState([])
+  const [setTask] = useState([])
   const [formData, setFormData] = useState({
     name: "",
     time: "",

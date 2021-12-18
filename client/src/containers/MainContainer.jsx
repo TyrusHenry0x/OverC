@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import ConstellationDetail from "../components/ConstellationDetails/ConstellationDetails";
 import Constellations from "../components/Constellations/Constellations";
 import { getAllConstellations } from "../services/constellations";
@@ -36,15 +36,6 @@ export default function MainContainer() {
     const newTask = await postTask(formData);
     setTasks((prevState) => [...prevState, newTask]);
   };
-
-  // const handleTaskUpdate = async (id, formData) => {
-  //   const updatedTask = await putTask(id, formData);
-  //   setTasks((prevState) =>
-  //     prevState.map((task) => {
-  //       return task.id === Number(id) ? updatedTask : task;
-  //     })
-  //   );
-  // };
 
   const handleTaskUpdate = async (id, formData) => {
     const updatedTask = await putTask(id, formData);
