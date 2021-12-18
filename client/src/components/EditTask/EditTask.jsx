@@ -38,8 +38,8 @@ const EditTask = ({ tasks, handleTaskUpdate }) => {
           handleTaskUpdate(id, formData)
           navigate('/constellations')
         }}>
-          <input className='name-input' type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
-          <input className='time-input' type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />
+          <input className='name-input' type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' autocomplete="off" />
+          <input className='time-input' type="text" name='time' value={time} onChange={handleChange} placeholder='Time' autocomplete="off" />
           <input className='submit-input' type="submit" />
         </form>
       </div>
