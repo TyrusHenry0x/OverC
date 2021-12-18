@@ -1,25 +1,26 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import './EditTask.css'
+import { useState, useEffect } from "react";
+import { useParams } from 'react-router'
+import { useNavigate } from 'react-router-dom';
 
-const EditTask = ({ handleTaskUpdate }) => {
-  const { id } = useParams()
+const EditTask = ({ tasks, handleTaskUpdate }) => {
   const [task] = useState([])
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     time: "",
-    constellation_id: id
   });
 
   const { name, time } = formData
+  const { id } = useParams()
 
   useEffect(() => {
-    const prefillFormData = async () => {
-      const taskData = task.find((task) => task.id === Number(id));
-      setFormData({ name: taskData.name, time: taskData.time });
-    }
+    const prefillFormData = () => {
+      const taskItem = task.find((task) => task.id === Number(id));
+      setFormData({ name: taskItem.name, time: taskItem.time });
+    };
     if (task.length) prefillFormData();
-  }, [task, id]);
+  }, [tasks]);
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -35,6 +36,7 @@ const EditTask = ({ handleTaskUpdate }) => {
         <form onSubmit={(e) => {
           e.preventDefault();
           handleTaskUpdate(id, formData)
+          navigate('/constellations')
         }}>
           <input className='name-input' type="text" name='name' value={name} onChange={handleChange} placeholder='What are you working on today?' />
           <input className='time-input' type="text" name='time' value={time} onChange={handleChange} placeholder='Time' />

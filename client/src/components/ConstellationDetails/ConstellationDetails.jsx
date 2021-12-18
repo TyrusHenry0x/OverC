@@ -40,7 +40,7 @@ export default function ConstellationDetail({ setTasks, handleTaskCreate }) {
           <div className='task-div' key={task.id}>
             <p className='task-name' key={`list${task.id}`}>{task.name}</p>
             <p className='task-time' key={`list${task.id}`}>{task.time} minutes</p>
-            <NavLink to="Edit">
+            <NavLink to={`/tasks/${task.id}/edit`}>
               <button>
                 Edit
               </button>

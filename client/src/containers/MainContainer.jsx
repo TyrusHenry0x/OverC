@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import ConstellationDetail from "../components/ConstellationDetails/ConstellationDetails";
 import Constellations from "../components/Constellations/Constellations";
 import { getAllConstellations } from "../services/constellations";
@@ -37,13 +37,20 @@ export default function MainContainer() {
     setTasks((prevState) => [...prevState, newTask]);
   };
 
+  // const handleTaskUpdate = async (id, formData) => {
+  //   const updatedTask = await putTask(id, formData);
+  //   setTasks((prevState) =>
+  //     prevState.map((task) => {
+  //       return task.id === Number(id) ? updatedTask : task;
+  //     })
+  //   );
+  // };
+
   const handleTaskUpdate = async (id, formData) => {
     const updatedTask = await putTask(id, formData);
-    setTasks((prevState) =>
-      prevState.map((task) => {
-        return task.id === Number(id) ? updatedTask : task;
-      })
-    );
+    setTasks(prevState => prevState.map(task => {
+      return task.id === Number(id) ? updatedTask : task;
+    }));
   };
 
   return (
@@ -55,7 +62,7 @@ export default function MainContainer() {
           <Route path="/constellations/:id"
             element={<ConstellationDetail setTasks={setTasks} handleTaskCreate={handleTaskCreate} setToggle={setToggle} />}
           />
-          <Route path="/constellations/:id/edit" element={<EditTask handleTaskUpdate={handleTaskUpdate} />} />
+          <Route path="/tasks/:id/edit" element={<EditTask tasks={tasks} handleTaskUpdate={handleTaskUpdate} />} />
           <Route path="/about" element={<About />} />
           <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} setToggle={setToggle} />} />
         </Routes>
