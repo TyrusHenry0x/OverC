@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const CreateTask = ({ handleTaskCreate }) => {
   const navigate = useNavigate()
   const { id } = useParams()
-  const [setTask] = useState([])
+  const [task, setTask] = useState([])
   const [formData, setFormData] = useState({
     name: "",
     time: "",
