@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration[6.1]
     create_table :tasks do |t|
       t.string :name
       t.string :time
-      t.references :constellation, null:false, foreign_key: true
+      t.references :constellation, null: false, foreign_key: true
 
       t.timestamps
     end
