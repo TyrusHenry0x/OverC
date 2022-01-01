@@ -5,10 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-const1 = Constellation.create! name: 'Team'
-const2 = Constellation.create! name: 'Personal Project'
-const3 = Constellation.create! name: 'Form submissions'
-const4 = Constellation.create! name: 'Low priority work'
+
+
+Task.destroy_all
+Constellation.destroy_all
+User.destroy_all
+
+@admin = User.create(username: 'Tyrus', email: 'tyrushenry@gmail.com', password: '123456')
+
+puts "#{User.count} users create!"
+
+const1 = Constellation.create! name: 'Team', user: @admin
+const2 = Constellation.create! name: 'Personal Project', user: @admin
+const3 = Constellation.create! name: 'Form submissions', user: @admin
+const4 = Constellation.create! name: 'Low priority work', user: @admin
+
+puts "#{Constellation.count} constellations created!"
 
 task1 = Task.new name: 'test code', time: '43'
 task2 = Task.new name: 'pull request reviews', time: '30' 
@@ -19,6 +31,8 @@ task6 = Task.new name: 'stuff', time: '23'
 task7 = Task.new name: 'stuff', time: '54'
 task8 = Task.new name: 'stuff', time: '98'
 task9 = Task.new name: 'stuff', time: '67'
+
+puts "#{Task.count} tasks created!"
 
 const1.tasks << task3
 const2.tasks << task1
