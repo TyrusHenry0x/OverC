@@ -11,11 +11,16 @@ import About from "../components/About/About";
 import Layout from "../components/Layout/Layout";
 import CreateTask from "../components/CreateTask/CreateTask";
 import EditTask from "../components/EditTask/EditTask";
+import Login from "../components/Login/Login";
+import { loginUser } from "../services/auth";
 
 export default function MainContainer() {
   const [constellations, setConstellations] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [setToggle] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // Use effects
   useEffect(() => {
     const fetchConstellations = async () => {
       const constellationlist = await getAllConstellations();
@@ -32,6 +37,12 @@ export default function MainContainer() {
     fetchTasks();
   }, []);
 
+  // Handle stuff
+  const handleLogin = async (formData) => {
+    const userData = await loginUser(formData);
+    setCurrentUser(userData);
+  }
+
   const handleTaskCreate = async (formData) => {
     const newTask = await postTask(formData);
     setTasks((prevState) => [...prevState, newTask]);
@@ -46,7 +57,7 @@ export default function MainContainer() {
 
   return (
     <div>
-      <Layout>
+      {/* <Layout> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/constellations" element={<Constellations constellations={constellations} />} />
@@ -56,8 +67,9 @@ export default function MainContainer() {
           <Route path="/tasks/:id/edit" element={<EditTask tasks={tasks} handleTaskUpdate={handleTaskUpdate} />} />
           <Route path="/about" element={<About />} />
           <Route path="/create" element={<CreateTask handleTaskCreate={handleTaskCreate} setToggle={setToggle} />} />
+        <Route exact path="/login" element={<Login handleLogin={handleLogin}/>} />
         </Routes>
-      </Layout>
+      {/* </Layout> */}
     </div>
   )
 }
